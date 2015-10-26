@@ -4,6 +4,7 @@ os: linux
 
 python:
     - "2.7"
+    - "3.2"
 
 install: "pip install -r requirements.txt"
 
