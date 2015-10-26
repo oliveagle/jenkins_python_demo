@@ -6,7 +6,7 @@
 # Distributed under terms of the MIT license.
 #
 
-if [ !-d cover ];then
+if [ ! -d cover ];then
 	mkdir cover
 fi
 nosetests -vv \
