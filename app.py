@@ -18,7 +18,7 @@ from apis_v1.views import apis_v1
 
 app = Flask(__name__, 
             static_url_path='/cover', 
-            static_folder='/home/oliveagle/tryout/src/cover/')
+            static_folder='cover')
 
 
 @app.route("/")
