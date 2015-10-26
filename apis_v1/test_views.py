@@ -25,5 +25,5 @@ class TestCaseViewsPage(unittest.TestCase):
 
     def test_page(self):
         res = views.page(1)
-        self.assertEqual(res, "/apis/v2/page/1")
+        self.assertEqual(res, "/apis/v2/page/1")    # fail
 
