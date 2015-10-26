@@ -15,3 +15,6 @@ pip install -r requirements
 
 python app.py
 ```
+
+
+demo travis status: [![Build Status](https://travis-ci.org/oliveagle/jenkins_python_demo.svg?branch=master)](https://travis-ci.org/oliveagle/jenkins_python_demo)
