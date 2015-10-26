@@ -12,14 +12,20 @@
 """
 
 """
-from flask import Flask
+from flask import Flask, send_file
 from apis_v2.views import apis_v2
 from apis_v1.views import apis_v1
 
-app = Flask(__name__, static_url_path='/cover', static_folder='/home/oliveagle/tryout/src/cover/')
+app = Flask(__name__, 
+            static_url_path='/cover', 
+            static_folder='/home/oliveagle/tryout/src/cover/')
 
 
 @app.route("/")
+def index():
+    return send_file("index.html")
+
+@app.route("/hello")
 def hello():
     return "Hello World!"
 
@@ -44,5 +50,5 @@ app.register_blueprint(apis_v2, url_prefix="/apis/v2")
 app.register_blueprint(apis_v1, url_prefix="/apis/v1")
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0")
+    app.run(host="0.0.0.0", debug=True)
 
