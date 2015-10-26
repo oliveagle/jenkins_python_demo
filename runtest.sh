@@ -12,7 +12,4 @@ fi
 nosetests -vv \
 	--with-coverage --cover-html \
 	--cover-package=app,apis_v1,apis_v2 \
-	--with-html --html-file=./cover/test_result.html \
-	2>&1 | tee cover/test.log
-
-
+	--with-html --html-file=./cover/test_result.html
