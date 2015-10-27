@@ -7,7 +7,7 @@
 #
 
 if [ -d .venv ]; then
-  source .venv/bin/activate
+  . .venv/bin/activate
 fi
 
 if [ ! -d cover ];then
