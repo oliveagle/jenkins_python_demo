@@ -16,14 +16,29 @@ import unittest
 
 import views
 
+from mock import MagicMock
+
+_page_num = views.page_num
+_page = views.page
 
 class TestCaseViewsPage(unittest.TestCase):
+
+    def setUp(self):
+        views.page_num = _page_num
+        views.page = _page
+
+    def test_mock_page_num(self):
+        # _page_num = views.page_num
+        views.page_num = MagicMock(return_value=8888)
+        self.assertEqual(views.page_num(1), 8888)
+        # views.page_num = _page_num
 
     def test_page_num(self):
         self.assertEqual(views.page_num(1), 1)
         self.assertEqual(views.page_num(3), 3)
 
     def test_page(self):
-        res = views.page(1)
-        self.assertEqual(res, "/apis/v2/page/1")
+        self.assertEqual(views.page(1), "/apis/v2/page/1")
 
+        views.page = MagicMock(return_value="/apis/v1/page/1")
+        self.assertEqual(views.page(1), "/apis/v2/page/1")    # fails

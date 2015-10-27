@@ -27,4 +27,3 @@ def page(page):
 @apis_v2.route('/page_num/<page>')
 def page_num(page):
     return page
-

@@ -25,5 +25,8 @@ class TestCaseViewsPage(unittest.TestCase):
 
     def test_page(self):
         res = views.page(1)
-        self.assertEqual(res, "/apis/v2/page/1")    # fail
+        self.assertEqual(res, "/apis/v1/page/1")
 
+    @unittest.skip("won't run")
+    def test_page_num_fail(self):
+        self.assertEqual(views.page_num(1), 2)
