@@ -5,3 +5,4 @@
 cover
 .coverage
 .venv
+python_packages
