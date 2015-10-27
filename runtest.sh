@@ -6,6 +6,10 @@
 # Distributed under terms of the MIT license.
 #
 
+if [ -d .venv ]; then
+  source .venv/bin/activate
+fi
+
 if [ ! -d cover ];then
 	mkdir cover
 fi
