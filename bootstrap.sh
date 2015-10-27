@@ -17,6 +17,6 @@ fi
 
 # already download packages from internet. 
 OPTS="--no-index --find-links=../python_packages -U"
-soruce .venv/bin/activate && \
+. .venv/bin/activate && \
   pip install $OPTS setuptools distribute pbr && \
   pip install $OPTS -r requirements.txt
