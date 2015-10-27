@@ -4,6 +4,7 @@ jenkins python demo
 
 setup
 ----
+
 ```bash
 virutalenv demo
 
@@ -18,3 +19,17 @@ python app.py
 
 
 demo travis status: [![Build Status](https://travis-ci.org/oliveagle/jenkins_python_demo.svg?branch=master)](https://travis-ci.org/oliveagle/jenkins_python_demo)
+
+
+
+dependencies
+------------
+
+mock dependencies are not fully managed by some pip version. so have to do it yourself. 
+
+
+```bash
+pip install pbr
+pip install funcsigs
+pip install mock
+```
