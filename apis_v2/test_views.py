@@ -16,7 +16,7 @@ import unittest
 
 import views
 
-from mock import MagicMock
+from mock import MagicMock, patch
 
 _page_num = views.page_num
 _page = views.page
@@ -42,3 +42,8 @@ class TestCaseViewsPage(unittest.TestCase):
 
         views.page = MagicMock(return_value="/apis/v1/page/1")
         self.assertEqual(views.page(1), "/apis/v1/page/1")    # fails
+
+    @patch("apis_v2.views.page_num")
+    def test_mock_patch(self, mock_page_num):
+        mock_page_num.return_value = 500
+        self.assertEqual(mock_page_num(12), 500)
